@@ -1,7 +1,8 @@
+"use client";
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-export default function Main() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-tr from-white to-blue-50 p-8">
       {/* Hero Section */}
@@ -29,18 +30,18 @@ export default function Main() {
             transition={{ delay: 1, type: 'spring', stiffness: 200 }}
             className="flex space-x-4"
           >
-            <a
+            <Link
               href="/commencer"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition-colors"
             >
               Utiliser le web
-            </a>
-            <a
-              href="#"
+            </Link>
+            <button
+              onClick={() => alert('Téléchargement en cours...')}
               className="inline-block border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-600 hover:text-white transition-colors"
             >
               Installer l'app
-            </a>
+            </button>
           </motion.div>
         </div>
         <motion.div
@@ -94,15 +95,17 @@ export default function Main() {
           Prêt à optimiser votre gestion médicale ?
         </motion.h2>
         <div className="flex justify-center space-x-4">
-          <Link href="/inscription">
-            <a className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition-colors">
-              Créer un compte
-            </a>
+          <Link
+            href="/inscription"
+            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition-colors"
+          >
+            Créer un compte
           </Link>
-          <Link href="/commencer">
-            <a className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-600 hover:text-white transition-colors">
-              Découvrir le web
-            </a>
+          <Link
+            href="/commencer"
+            className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-600 hover:text-white transition-colors"
+          >
+            Découvrir le web
           </Link>
         </div>
       </section>
